@@ -18,7 +18,6 @@ import (
 	"unicode"
 	"unicode/utf8"
 
-	"github.com/fatih/color"
 	shlex "github.com/flynn-archive/go-shlex"
 	"github.com/precla/readline"
 )
@@ -638,8 +637,7 @@ func buildOptionsStrings(options []string, selected []int, index int) []string {
 			}
 		}
 		if i == index {
-			cyan := color.New(color.FgCyan).Add(color.Bold).SprintFunc()
-			strs = append(strs, cyan(symbol+mark+opt))
+			strs = append(strs, symbol+mark+opt)
 		} else {
 			strs = append(strs, strings.Repeat(" ", utf8.RuneCountInString(symbol))+mark+opt)
 		}
