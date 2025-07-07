@@ -530,19 +530,20 @@ func (s *Shell) multiChoice(options []string, text string, init []int, multiResu
 	// TODO it happens on every update, however, some trash appears in history without this line
 	s.Print("\033[0;0H")
 
-	offset := fd
-
+	offset := 0
 	update := func() {
 		strs := buildOptionsStrings(options, selected, cur)
-		if len(strs) > maxRows-1 {
-			strs = strs[offset : maxRows+offset-1]
-		}
+		// the following block causes an out of range slice in a terminal that is runnign via a serial connection:
+		// if len(strs) > maxRows-1 {
+		// 	strs = strs[offset : maxRows+offset-1]
+		// }
 		s.Print("\033[0;0H")
 		// clear from the cursor to the end of the screen
 		s.Print("\033[0J")
 		s.Println(text)
 		s.Print(strings.Join(strs, "\n"))
 	}
+
 	var lastKey rune
 	refresh := make(chan struct{}, 1)
 	listener := func(line []rune, pos int, key rune) (newline []rune, newPos int, ok bool) {
@@ -553,7 +554,7 @@ func (s *Shell) multiChoice(options []string, text string, init []int, multiResu
 				offset++
 			}
 			if cur >= len(options) {
-				offset = fd
+				offset = 0
 				cur = 0
 			}
 		} else if key == -1 {
@@ -565,7 +566,7 @@ func (s *Shell) multiChoice(options []string, text string, init []int, multiResu
 				if len(options) > maxRows-1 {
 					offset = len(options) - maxRows + 1
 				} else {
-					offset = fd
+					offset = 0
 				}
 				cur = len(options) - 1
 			}
