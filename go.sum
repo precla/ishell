@@ -2,8 +2,8 @@ github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSs
 github.com/flynn-archive/go-shlex v0.0.0-20150515145356-3f9db97f8568 h1:BMXYYRWTLOJKlh+lOBt6nUQgXAfB7oVIQt5cNreqSLI=
 github.com/flynn-archive/go-shlex v0.0.0-20150515145356-3f9db97f8568/go.mod h1:rZfgFAXFS/z/lEd6LJmf9HVZ1LkgYiHx5pHhV5DR16M=
 github.com/pmezard/go-difflib v1.0.0/go.mod h1:iKH77koFhYxTK1pcRnkKkqfTogsbg7gZNVY4sRDYZ/4=
-github.com/precla/readline v0.0.3 h1:jtQWDcPcazMgq+p9iyrg8iQlACwmPuBVD9MqLuxVJsM=
-github.com/precla/readline v0.0.3/go.mod h1:VjAB1jowclYfzFyJz6Y4x2W1QVwyI25O0o54rxQryug=
+github.com/precla/readline v0.0.4 h1:DgIj3YWnZHIm4lTPnDfjb4qcmzqgceM7ayyKSazjDzM=
+github.com/precla/readline v0.0.4/go.mod h1:VjAB1jowclYfzFyJz6Y4x2W1QVwyI25O0o54rxQryug=
 github.com/stretchr/testify v1.10.0/go.mod h1:r2ic/lqez/lEtzL7wO/rwa5dbSLXVDPFyf8C91i36aY=
 golang.org/x/sys v0.33.0 h1:q3i8TbbEz+JRD9ywIRlyRAQbM0qF7hu24q3teo2hbuw=
 golang.org/x/sys v0.33.0/go.mod h1:BJP2sWEmIv4KK5OTEluFJCKSidICx8ciO85XgH3Ak8k=
